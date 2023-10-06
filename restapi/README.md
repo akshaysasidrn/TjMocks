@@ -196,3 +196,24 @@ A separate HTTPS server is set up for client verification. This server requires 
 - **HTTPS_PORT**: Port number for HTTPS requests. Default is `3443`.
 - **CLIENT_VERIF_HTTPS_PORT**: Port number for HTTPS server with client verification. Default is `3444`.
 - **REDIRECT_URI**: Redirect URI for OAuth 2.0 authorization. Default is `http://localhost:8082/oauth2/authorize`.
+
+## Credentials to test
+
+Bearer token:
+```
+ secret-token
+```
+
+Basic:
+```
+username: admin
+password: password
+```
+
+OAuth:
+```
+Access Token URL: http://localhost:3001/oauth/token
+Authorization URL: http://localhost:3001/oauth/authorize
+Client Id: client1
+Client Secret: client1secret
+```
