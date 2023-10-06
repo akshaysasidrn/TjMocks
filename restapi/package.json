@@ -1,0 +1,19 @@
+{
+  "name": "express-restapi-app",
+  "version": "1.0.0",
+  "description": "Node.js Express app for restapi ds mock",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "morgan": "^1.10.0",
+    "oauth2orize": "^1.11.0",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0"
+  }
+}
