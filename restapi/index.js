@@ -13,6 +13,7 @@ const app = express();
 const port = process.env.HTTP_PORT || 3001;
 const sslPort = process.env.HTTPS_PORT || 3443;
 const clientVerificationSslPort = process.env.CLIENT_VERIF_HTTPS_PORT || 3444;
+const redirectUri = process.env.REDIRECT_URI || 'http://localhost:8082/oauth2/authorize';
 
 // Add morgan middleware to log incoming request details
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
@@ -114,8 +115,8 @@ const users = [
 
 // Mock client application database
 const clients = [
-  { id: 'client1', secret: 'client1secret', name: 'Client Application 1', redirectUri: 'http://localhost:8082/oauth2/authorize' },
-  { id: 'client2', secret: 'client2secret', name: 'Client Application 2', redirectUri: 'http://localhost:8082/oauth2/authorize' }
+  { id: 'client1', secret: 'client1secret', name: 'Client Application 1', redirectUri },
+  { id: 'client2', secret: 'client2secret', name: 'Client Application 2', redirectUri }
 ];
 
 // OAuth 2.0 server
