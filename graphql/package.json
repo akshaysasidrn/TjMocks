@@ -1,0 +1,15 @@
+{
+    "name": "graphql-auth-server",
+    "version": "1.0.0",
+    "description": "Mock GraphQL server with authentication flows",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "apollo-server": "^3.5.0",
+        "got": "^13.0.0",
+        "graphql": "^15.7.2",
+        "morgan": "^1.10.0"
+    }
+}
