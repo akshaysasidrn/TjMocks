@@ -1,0 +1,1476 @@
+
+> redis-tls-test@1.0.0 test
+> jest
+
+  console.error
+    Redis connection error for TLS with CA certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Redis connection error for TLS with CA certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Redis connection error for TLS with CA certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Redis connection error for TLS with CA certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Redis connection error for TLS with CA certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Redis connection error for TLS with CA certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Ping failed for TLS with CA certificate: MaxRetriesPerRequestError: Reached the max retries per request limit (which is 5). Refer to "maxRetriesPerRequest" option for details.
+        at TLSSocket.<anonymous> (/Users/akshay/code/mock/redis/node_modules/ioredis/built/redis/event_handler.js:182:37)
+        at Object.onceWrapper (node:events:632:26)
+        at TLSSocket.emit (node:events:529:35)
+        at node:net:350:12
+        at TCP.done (node:_tls_wrap:614:7)
+
+      64 |           expect(result).toBe('PONG');
+      65 |         } catch (error) {
+    > 66 |           console.error(`Ping failed for ${name}:`, error);
+         |                   ^
+      67 |           throw error;
+      68 |         }
+      69 |       });
+
+      at redis_connection.test.ts:66:19
+          at Generator.throw (<anonymous>)
+      at rejected (redis_connection.test.ts:6:65)
+
+  console.error
+    Redis connection error for TLS with CA certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Redis connection error for TLS with CA certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Redis connection error for TLS with CA certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Redis connection error for TLS with CA certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Redis connection error for TLS with CA certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Redis connection error for TLS with CA certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Set/Get failed for TLS with CA certificate: MaxRetriesPerRequestError: Reached the max retries per request limit (which is 5). Refer to "maxRetriesPerRequest" option for details.
+        at TLSSocket.<anonymous> (/Users/akshay/code/mock/redis/node_modules/ioredis/built/redis/event_handler.js:182:37)
+        at Object.onceWrapper (node:events:632:26)
+        at TLSSocket.emit (node:events:529:35)
+        at node:net:350:12
+        at TCP.done (node:_tls_wrap:614:7)
+
+      80 |           expect(getResult).toBe(value);
+      81 |         } catch (error) {
+    > 82 |           console.error(`Set/Get failed for ${name}:`, error);
+         |                   ^
+      83 |           throw error;
+      84 |         }
+      85 |       });
+
+      at redis_connection.test.ts:82:19
+          at Generator.throw (<anonymous>)
+      at rejected (redis_connection.test.ts:6:65)
+
+  console.error
+    Redis connection error for TLS with self-signed certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Redis connection error for TLS with self-signed certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Redis connection error for TLS with self-signed certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Redis connection error for TLS with self-signed certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Redis connection error for TLS with self-signed certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Redis connection error for TLS with self-signed certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Ping failed for TLS with self-signed certificate: MaxRetriesPerRequestError: Reached the max retries per request limit (which is 5). Refer to "maxRetriesPerRequest" option for details.
+        at TLSSocket.<anonymous> (/Users/akshay/code/mock/redis/node_modules/ioredis/built/redis/event_handler.js:182:37)
+        at Object.onceWrapper (node:events:632:26)
+        at TLSSocket.emit (node:events:529:35)
+        at node:net:350:12
+        at TCP.done (node:_tls_wrap:614:7)
+
+      64 |           expect(result).toBe('PONG');
+      65 |         } catch (error) {
+    > 66 |           console.error(`Ping failed for ${name}:`, error);
+         |                   ^
+      67 |           throw error;
+      68 |         }
+      69 |       });
+
+      at redis_connection.test.ts:66:19
+          at Generator.throw (<anonymous>)
+      at rejected (redis_connection.test.ts:6:65)
+
+  console.error
+    Redis connection error for TLS with self-signed certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Redis connection error for TLS with self-signed certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Redis connection error for TLS with self-signed certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Redis connection error for TLS with self-signed certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Redis connection error for TLS with self-signed certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Redis connection error for TLS with self-signed certificate: Error: Hostname/IP does not match certificate's altnames: Host: localhost. is not cert's CN: Redis Server
+        at new NodeError (node:internal/errors:405:5)
+        at Object.checkServerIdentity (node:tls:337:12)
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1610:27)
+        at TLSSocket.emit (node:events:517:28)
+        at TLSSocket._finishInit (node:_tls_wrap:1017:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:803:12) {
+      reason: "Host: localhost. is not cert's CN: Redis Server",
+      host: 'localhost',
+      cert: {
+        subject: [Object: null prototype] { CN: 'Redis Server' },
+        issuer: [Object: null prototype] { CN: 'Redis CA' },
+        ca: false,
+        modulus: 'C7FBE75F9C2AAC1739271722887FE0A29A2B6E4A5A1185091912BC0116173DBD81D748A93D31766BF8227A7426E43CBDA7BBC077F7352EB1D76207F66995E712EDAD5266A73E16C4081FE6EA8D844C6242B1D4ABDDA02377BB47F34BCF2214E02867356CA59377C8563696552A023546D8ED7C7C9A570B94E7BEF9B26B6B26EEDF6B1609FF630ED080121EA5DC1165B48F42A24EA80A5ADFEEB2436A75193848BE720BD7EE3D51EC23836E557B4185C212AFDA97C87864E83DDF68A043538EEAE38AD3DD2D6FC0B26C4560429B9070EB46438FE32DA27234E9CF638FF710260AD33CD1C06527563331910F2CC172D25470ADC9500DCF77073BAADCBC967BF5E9',
+        bits: 2048,
+        exponent: '0x10001',
+        pubkey: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c7 fb e7 5f 9c 2a ac 17 39 27 17 22 88 7f e0 a2 9a ... 244 more bytes>,
+        valid_from: 'Aug 12 07:35:02 2024 GMT',
+        valid_to: 'Aug 12 07:35:02 2025 GMT',
+        fingerprint: '0C:55:94:1E:4D:8D:2D:21:A1:67:66:CF:21:F5:16:05:34:F3:AC:59',
+        fingerprint256: 'B1:57:AF:3B:81:7D:63:40:F8:79:F6:9F:79:52:7D:9A:66:2A:2B:00:44:EC:3C:00:0A:44:B8:82:46:E0:1C:3C',
+        fingerprint512: 'A3:DC:5C:B8:A2:DD:89:93:67:8B:CE:99:5A:72:9B:B7:C6:D2:0F:41:52:A8:D7:65:65:1C:83:04:20:2C:63:0D:AC:6E:E9:8A:5F:55:1A:3D:D5:5C:11:3D:E8:60:28:35:FA:D1:F2:70:6F:67:B7:69:2B:DF:02:F5:5F:9A:E9:BF',
+        serialNumber: '7A6D5B9F41D76FF26A2688305F7AA29D3E1B9583',
+        raw: <Buffer 30 82 03 fa 30 82 01 e2 a0 03 02 01 02 02 14 7a 6d 5b 9f 41 d7 6f f2 6a 26 88 30 5f 7a a2 9d 3e 1b 95 83 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 972 more bytes>,
+        issuerCertificate: <ref *1> {
+          subject: [Object: null prototype],
+          issuer: [Object: null prototype],
+          ca: true,
+          modulus: 'C2CA65CA7D968792481725156F7126F8717CDC4F74CC7CC1CFC5513E3557A59E0916BE341BDD853B7254C818D3AA467AB1064A4BEF8B5C9E84B6AAAE093171F2E4ADCE6397761289D4B4BFDB24A1D1507C356E22D295A2CEB95E1D82F06C360A5FC35D2C3D386E2CD3B002C1196CECB586E2B93E765337F9C6AD28E1F42E8B4EDA7C8672B388952FAAAE47172B29DF17E257BFC08979D55023335D9FEFBCDD8630FE27893448CE204E1D875A4621B8F21D9EEB4ABC5AC18E0FA4735AD554D414B162B1AB912170636A4A150AFDCC7158130DC76CE9AC146011393B2D13A1F6AC003B054618CCE0A7684F908B40A0B94DF9E12DA7FF6FB05C24284D9ED23DBB032266B6A8C45218053595A975D6592881D2534292C6DC59BB21F7776C81B499E98C9960433B86DFAE051B6FA0EA011122D62B61E27B0413299C8A4C18BD6519A4A9A07B97D5589E97CE70403C99B9FA9E2B70427998BA2C19FBA599A7C95E569400426FF9A920ED842CABB8009063E490FEE7341D881CEC45CB933115F3E47E6DFCE48731643547679AE66ADBCF00E355C16561D5FCCDA0CFE22619D30A201B2BF6B25ACDBC305E74DC1B5DA917A28768B111A69EBF19C3DE9E65BA17AED99204FD0B8A0B2691A2D71D09F45557954B5905FB8DC7556A11352CB145CF36A4C17645D196C3F7CB6C0EBB80ACB9FA9ED23A67922E997C51B3AAB24A2C5BECEB6099',
+          bits: 4096,
+          exponent: '0x10001',
+          pubkey: <Buffer 30 82 02 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 02 0f 00 30 82 02 0a 02 82 02 01 00 c2 ca 65 ca 7d 96 87 92 48 17 25 15 6f 71 26 f8 71 ... 500 more bytes>,
+          valid_from: 'Aug 12 07:35:02 2024 GMT',
+          valid_to: 'Jun  2 07:35:02 2027 GMT',
+          fingerprint: 'DA:E1:F6:9D:ED:A0:85:14:5A:DD:6A:9B:DB:2D:EB:3F:DF:40:D2:CA',
+          fingerprint256: 'FF:A7:8E:59:1C:0E:F3:D4:AC:5F:87:F0:1C:5F:54:2E:8B:6A:20:35:97:DA:56:87:E9:57:51:2F:25:35:BA:17',
+          fingerprint512: 'ED:23:69:4D:D2:92:1B:84:6F:DA:1F:62:45:06:8A:BF:80:4A:A2:5E:CB:BE:8A:7B:D9:96:50:0C:FF:19:9A:49:B6:18:E2:F5:1E:4E:2F:DA:FB:E5:C9:ED:90:06:20:0F:8D:3D:90:91:A2:CA:35:DA:ED:B7:CD:07:62:C6:CF:61',
+          serialNumber: '3851C5894FC8B55876B5630334A9AFFED5F7FD50',
+          raw: <Buffer 30 82 05 07 30 82 02 ef a0 03 02 01 02 02 14 38 51 c5 89 4f c8 b5 58 76 b5 63 03 34 a9 af fe d5 f7 fd 50 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 1241 more bytes>,
+          issuerCertificate: [Circular *1]
+        }
+      },
+      code: 'ERR_TLS_CERT_ALTNAME_INVALID'
+    }
+
+      51 |         connection = await getConnection(options);
+      52 |         connection.on('error', (error) => {
+    > 53 |           console.error(`Redis connection error for ${name}:`, error);
+         |                   ^
+      54 |         });
+      55 |       });
+      56 |
+
+      at EventEmitter.<anonymous> (redis_connection.test.ts:53:19)
+      at EventEmitter.silentEmit (node_modules/ioredis/built/Redis.js:482:30)
+      at TLSSocket.<anonymous> (node_modules/ioredis/built/redis/event_handler.js:196:14)
+
+  console.error
+    Set/Get failed for TLS with self-signed certificate: MaxRetriesPerRequestError: Reached the max retries per request limit (which is 5). Refer to "maxRetriesPerRequest" option for details.
+        at TLSSocket.<anonymous> (/Users/akshay/code/mock/redis/node_modules/ioredis/built/redis/event_handler.js:182:37)
+        at Object.onceWrapper (node:events:632:26)
+        at TLSSocket.emit (node:events:529:35)
+        at node:net:350:12
+        at TCP.done (node:_tls_wrap:614:7)
+
+      80 |           expect(getResult).toBe(value);
+      81 |         } catch (error) {
+    > 82 |           console.error(`Set/Get failed for ${name}:`, error);
+         |                   ^
+      83 |           throw error;
+      84 |         }
+      85 |       });
+
+      at redis_connection.test.ts:82:19
+          at Generator.throw (<anonymous>)
+      at rejected (redis_connection.test.ts:6:65)
+

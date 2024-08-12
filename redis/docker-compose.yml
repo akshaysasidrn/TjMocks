@@ -1,0 +1,24 @@
+services:
+  redis-insecure-tls:
+    image: redis:6.2
+    command: redis-server --port 0 --tls-port 6379 --tls-cert-file /certs/redis.crt --tls-key-file /certs/redis.key --tls-ca-cert-file /certs/ca.crt --tls-auth-clients no
+    volumes:
+      - ./certs:/certs
+    ports:
+      - "6379:6379"
+
+  redis-tls-ca:
+    image: redis:6.2
+    command: redis-server --port 0 --tls-port 6380 --tls-cert-file /certs/redis.crt --tls-key-file /certs/redis.key --tls-ca-cert-file /certs/ca.crt --tls-auth-clients no
+    volumes:
+      - ./certs:/certs
+    ports:
+      - "6380:6380"
+
+  redis-tls-client-cert:
+    image: redis:6.2
+    command: redis-server --port 0 --tls-port 6381 --tls-cert-file /certs/redis.crt --tls-key-file /certs/redis.key --tls-ca-cert-file /certs/ca.crt --tls-auth-clients yes
+    volumes:
+      - ./certs:/certs
+    ports:
+      - "6381:6381"
