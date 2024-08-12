@@ -1,5 +1,4 @@
-import { getConnection, SourceOptions } from './redis_connection';
-import Redis from 'ioredis';
+import { getConnection, SourceOptions, RedisQueryService } from './redis_connection';
 import * as fs from 'fs';
 
 describe('Redis TLS Connection Tests', () => {
@@ -7,9 +6,9 @@ describe('Redis TLS Connection Tests', () => {
     {
       name: 'Insecure TLS (rejectUnauthorized: false)',
       options: {
-        username: '',
+        username: 'default',
         host: 'localhost',
-        password: '',
+        password: 'password123',
         port: 6379,
         tls_enabled: true,
         tls_certificate: 'none'
@@ -18,9 +17,9 @@ describe('Redis TLS Connection Tests', () => {
     {
       name: 'TLS with CA certificate',
       options: {
-        username: '',
+        username: 'default',
         host: 'localhost',
-        password: '',
+        password: 'password123',
         port: 6380,
         tls_enabled: true,
         tls_certificate: 'ca_certificate',
@@ -30,9 +29,9 @@ describe('Redis TLS Connection Tests', () => {
     {
       name: 'TLS with client certificate',
       options: {
-        username: '',
+        username: 'default',
         host: 'localhost',
-        password: '',
+        password: 'password123',
         port: 6381,
         tls_enabled: true,
         tls_certificate: 'self_signed',
@@ -43,43 +42,77 @@ describe('Redis TLS Connection Tests', () => {
     }
   ];
 
+  const queryService = new RedisQueryService();
+
   configs.forEach(({ name, options }) => {
     describe(name, () => {
-      let connection: Redis;
-
-      beforeAll(async () => {
-        connection = await getConnection(options);
-        connection.on('error', (error) => {
-          console.error(`Redis error for ${name}:`, error);
-        });
-      });
-
-      afterAll(async () => {
-        await connection.quit();
-      });
-
       it('should connect successfully', async () => {
-        try {
-          const result = await connection.ping();
-          expect(result).toBe('PONG');
-        } catch (error) {
-          console.error(`Connection failed for ${name}:`, error);
-          throw error;
-        }
+        const result = await queryService.testConnection(options);
+        expect(result.status).toBe('ok');
       });
 
       it('should set and get a value', async () => {
-        try {
-          const key = 'test_key';
-          const value = 'test_value';
-          await connection.set(key, value);
-          const result = await connection.get(key);
-          expect(result).toBe(value);
-        } catch (error) {
-          console.error(`Set/Get failed for ${name}:`, error);
-          throw error;
-        }
+        const setResult = await queryService.run(options, { query: 'SET test_key test_value' }, 'test');
+        expect(setResult.status).toBe('ok');
+
+        const getResult = await queryService.run(options, { query: 'GET test_key' }, 'test');
+        expect(getResult.status).toBe('ok');
+        expect(getResult.data).toBe('test_value');
       });
+    });
+  });
+
+  describe('TLS with CA certificate (error checking)', () => {
+    it('should fail to connect with invalid CA certificate', async () => {
+      const invalidOptions = {
+        ...configs[1].options,
+        ca_cert: 'invalid certificate content'
+      };
+      await expect(queryService.testConnection(invalidOptions)).rejects.toThrow(/Connection test failed/);
+    });
+
+    it('should fail to connect with altered CA certificate', async () => {
+      const alteredCaCert = fs.readFileSync('./certs/ca.crt', 'utf8').replace('A', 'B');
+      const alteredOptions = {
+        ...configs[1].options,
+        ca_cert: alteredCaCert
+      };
+      await expect(queryService.testConnection(alteredOptions)).rejects.toThrow(/Connection test failed/);
+    });
+
+    it('should fail to connect with wrong CA certificate', async () => {
+      const wrongOptions = {
+        ...configs[1].options,
+        ca_cert: fs.readFileSync('./certs/client.crt', 'utf8') // Using client cert instead of CA cert
+      };
+      await expect(queryService.testConnection(wrongOptions)).rejects.toThrow(/Connection test failed/);
+    });
+  });
+
+  describe('TLS with client certificate (detailed error checking)', () => {
+    it('should fail to connect with incorrect client certificate', async () => {
+      const invalidOptions = {
+        ...configs[2].options,
+        client_cert: 'invalid certificate content'
+      };
+      await expect(queryService.testConnection(invalidOptions)).rejects.toThrow(/Connection test failed/);
+    });
+
+    it('should fail to connect with altered client certificate', async () => {
+      const alteredClientCert = fs.readFileSync('./certs/client.crt', 'utf8').replace('A', 'B');
+      const alteredOptions = {
+        ...configs[2].options,
+        client_cert: alteredClientCert
+      };
+      await expect(queryService.testConnection(alteredOptions)).rejects.toThrow(/Connection test failed/);
+    });
+
+    it('should fail to connect with incorrect client key', async () => {
+      const invalidOptions = {
+        ...configs[2].options,
+        client_key: 'invalid key content'
+      };
+      await expect(queryService.testConnection(invalidOptions)).rejects.toThrow(/Connection test failed/);
     });
   });
 });
